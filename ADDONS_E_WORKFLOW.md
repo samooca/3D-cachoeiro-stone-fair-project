@@ -1,4 +1,4 @@
-# Addons e workflow do stand
+# Add-ons e workflow do stand
 
 ## Instalados no Blender 5.2
 
@@ -8,17 +8,13 @@
 - Hunyuan3D-2 Generator oficial da Tencent (`hunyuan3d_official`)
 - OpenCV Contrib 5.0.0.93, necessário ao Image Matcher
 
-O aplicativo fSpy portátil está em `tools/fSpy/fSpy.exe`.
+Os pacotes públicos estão em `packages/addons/`. O aplicativo fSpy portátil está compactado em `packages/tools/fSpy-1.0.3-win.zip`.
 
 ## Integração com ComfyUI
 
-Os custom nodes do ComfyUI-Blender foram copiados para:
+Instale os custom nodes do ComfyUI-Blender na pasta `custom_nodes/ComfyUI-Blender` da sua instalação local e reinicie o ComfyUI para carregar os novos nós.
 
-`C:\Users\samoo\Documentos\ComfyUI_main\custom_nodes\ComfyUI-Blender`
-
-É necessário reiniciar o ComfyUI para carregar os novos nós.
-
-O ComfyUI-Blender está configurado inicialmente para `http://127.0.0.1:8188` e usa a pasta do projeto `comfyui_blender_data` para workflows, entradas, saídas e temporários.
+O ComfyUI-Blender pode usar `http://127.0.0.1:8188` e a pasta do projeto `comfyui_blender_data` para workflows, entradas, saídas e temporários.
 
 O addon oficial Hunyuan3D usa outro servidor, padrão `http://localhost:8080`. Ele não substitui o workflow nativo do ComfyUI e só funciona se o `api_server.py` oficial da Tencent estiver rodando.
 

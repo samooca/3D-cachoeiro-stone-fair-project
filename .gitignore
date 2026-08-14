@@ -1,0 +1,46 @@
+# Publicar add-ons e ferramentas somente como ZIPs em packages/
+/addons/
+/tools/
+
+# Estado local/duplicado da integração ComfyUI-Blender
+/comfyui_blender_data/
+
+# Primeira tentativa de vistas geradas; não é geometricamente consistente
+/multiview_stand/
+
+*.blend1
+*.blend2
+*.blend@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+*.safetensors
+*.ckpt
+*.pt
+*.pth
+*.onnx
+
+*.glb
+*.gltf
+*.fbx
+*.obj
+*.mtl
+
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+secrets.*
+
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.tmp
+*.log
+*.bak
+~$*

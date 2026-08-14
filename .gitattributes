@@ -1,0 +1,8 @@
+*.blend binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.zip binary
+*.glb binary
+*.gltf binary
+*.fbx binary

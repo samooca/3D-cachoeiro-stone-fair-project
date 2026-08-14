@@ -1,0 +1,33 @@
+name: Melhoria
+description: Proponha melhorias na cena, no workflow ou na automação.
+title: "feat: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problema ou oportunidade
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Solução proposta
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Área
+      options:
+        - Blender/blockout
+        - ComfyUI/Hunyuan3D
+        - Add-ons e ferramentas
+        - Documentação
+        - Automação e validação
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Critérios de aceite

@@ -1,0 +1,5 @@
+53a3ec77c99ede59fcfa438d84a04a46849bd2517ba2c587d5c76edafe54b2c9  packages/addons/comfyui_blender-v4.5.1.zip
+ac10ee2b02f832d7d985928b4e10ff82f82e34e3245777fd4bd3615647e8f207  packages/addons/fSpy-Blender-1.0.3.zip
+b822de2ca647be05a9d9428c50b3a3b7f0f5fd1af2cff2d12973bd378a4bd0b5  packages/addons/hunyuan3d-official-blender-addon.zip
+82fc74ced4b89397cfecd6f90bc403bb28dc20fbbe9a9ab7ff0eb03320712cdd  packages/addons/image-matcher-v1.0.3.zip
+e9694824de5c663e8fd89713ccf30dc95ec00a2cb3df1c97b61c989f85d39a5d  packages/tools/fSpy-1.0.3-win.zip
