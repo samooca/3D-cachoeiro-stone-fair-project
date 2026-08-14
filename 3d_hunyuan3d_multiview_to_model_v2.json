@@ -1,0 +1,93 @@
+{
+  "3": {
+    "inputs": {
+      "seed": 502126049100058,
+      "steps": 30,
+      "cfg": 6.5,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 1,
+      "model": ["70", 0],
+      "positive": ["65", 0],
+      "negative": ["65", 1],
+      "latent_image": ["66", 0]
+    },
+    "class_type": "KSampler",
+    "_meta": {"title": "KSampler"}
+  },
+  "51": {
+    "inputs": {"crop": "none", "clip_vision": ["54", 1], "image": ["56", 0]},
+    "class_type": "CLIPVisionEncode",
+    "_meta": {"title": "CLIP Vision Encode - Front"}
+  },
+  "54": {
+    "inputs": {"ckpt_name": "hunyuan3d-dit-v2-mv_fp16.safetensors"},
+    "class_type": "ImageOnlyCheckpointLoader",
+    "_meta": {"title": "Load Hunyuan3D 2 MV"}
+  },
+  "56": {
+    "inputs": {"image": "3d_hunyuan3d_multiview_to_model_front_image.png"},
+    "class_type": "LoadImage",
+    "_meta": {"title": "Front"}
+  },
+  "61": {
+    "inputs": {"num_chunks": 8000, "octree_resolution": 256, "samples": ["3", 0], "vae": ["54", 2]},
+    "class_type": "VAEDecodeHunyuan3D",
+    "_meta": {"title": "Decode Hunyuan3D - Safe VRAM"}
+  },
+  "65": {
+    "inputs": {"front": ["51", 0], "left": ["79", 0], "back": ["81", 0], "right": ["86", 0]},
+    "class_type": "Hunyuan3Dv2ConditioningMultiView",
+    "_meta": {"title": "Four Consistent Orthographic Views"}
+  },
+  "66": {
+    "inputs": {"resolution": 3072, "batch_size": 1},
+    "class_type": "EmptyLatentHunyuan3Dv2",
+    "_meta": {"title": "Empty Latent 3072"}
+  },
+  "70": {
+    "inputs": {"shift": 1.0, "model": ["54", 0]},
+    "class_type": "ModelSamplingAuraFlow",
+    "_meta": {"title": "AuraFlow Sampling"}
+  },
+  "78": {
+    "inputs": {"image": "3d_hunyuan3d_multiview_to_model_left_image.png"},
+    "class_type": "LoadImage",
+    "_meta": {"title": "Left"}
+  },
+  "79": {
+    "inputs": {"crop": "none", "clip_vision": ["54", 1], "image": ["78", 0]},
+    "class_type": "CLIPVisionEncode",
+    "_meta": {"title": "CLIP Vision Encode - Left"}
+  },
+  "80": {
+    "inputs": {"image": "3d_hunyuan3d_multiview_to_model_back_image.png"},
+    "class_type": "LoadImage",
+    "_meta": {"title": "Back"}
+  },
+  "81": {
+    "inputs": {"crop": "none", "clip_vision": ["54", 1], "image": ["80", 0]},
+    "class_type": "CLIPVisionEncode",
+    "_meta": {"title": "CLIP Vision Encode - Back"}
+  },
+  "82": {
+    "inputs": {"algorithm": "surface net", "threshold": 0.6, "voxel": ["61", 0]},
+    "class_type": "VoxelToMesh",
+    "_meta": {"title": "Voxel to Mesh"}
+  },
+  "83": {
+    "inputs": {"filename_prefix": "mesh/iven_stone_stand_v2", "image": "", "mesh": ["82", 0]},
+    "class_type": "SaveGLB",
+    "_meta": {"title": "Save Iven Stone Stand GLB"}
+  },
+  "86": {
+    "inputs": {"crop": "none", "clip_vision": ["54", 1], "image": ["87", 0]},
+    "class_type": "CLIPVisionEncode",
+    "_meta": {"title": "CLIP Vision Encode - Right"}
+  },
+  "87": {
+    "inputs": {"image": "3d_hunyuan3d_multiview_to_model_right_image.png"},
+    "class_type": "LoadImage",
+    "_meta": {"title": "Right"}
+  }
+}

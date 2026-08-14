@@ -1,0 +1,38 @@
+name: Bug no pipeline
+description: Relate falhas no Blender, ComfyUI, Hunyuan3D ou nos arquivos gerados.
+title: "bug: "
+labels: [bug]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Descrição
+      description: O que ocorreu e qual era o resultado esperado?
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: Versões
+      placeholder: Blender, ComfyUI, GPU/driver e workflow
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Passos para reproduzir
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs relevantes
+      description: Remova tokens, nomes de usuário e caminhos pessoais antes de enviar.
+      render: shell
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Verificação de segurança
+      options:
+        - label: Confirmei que os anexos e logs não contêm dados sensíveis.
+          required: true
